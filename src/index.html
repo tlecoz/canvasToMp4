@@ -25,10 +25,10 @@
         demo.ctx = demo.getContext("2d");
 
         demo.nextFrame = function(pct){
-          this.ctx.clearRect(0,0,2560,1600)
+          this.ctx.clearRect(0,0,demo.width,demo.height)
           this.ctx.beginPath();
           this.ctx.fillStyle = "#ff0000";
-          this.ctx.rect(2560 * pct,1600*pct,100,100);
+          this.ctx.fillRect(demo.width*pct,demo.height*pct,100,100);
         }
 
 
@@ -38,8 +38,8 @@
           fps:60,
           durationInSeconds:1,
           fileName:"videos/output.mp4",
-          encoderType:"h264_nvenc",
-          verticalFlip:true
+          encoderType:"libx264",
+          verticalFlip:false
         }
 
 

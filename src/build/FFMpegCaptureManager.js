@@ -48,7 +48,7 @@ class FFMpegCaptureManager extends EventDispatcher {
         });
     }
     captureFrame() {
-        if (this.frameCaptured == this.frameTotal)
+        if (this.frameCaptured > this.frameTotal)
             this.end();
         else if (this.frameCaptured - this.frameEncoded < this.dif) {
             if (this.captureMode)

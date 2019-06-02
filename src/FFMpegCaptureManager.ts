@@ -89,7 +89,7 @@ class FFMpegCaptureManager extends EventDispatcher {
 
 
   private captureFrame():void{
-    if(this.frameCaptured == this.frameTotal) this.end();
+    if(this.frameCaptured > this.frameTotal) this.end();
     else if(this.frameCaptured - this.frameEncoded < this.dif){
       if(this.captureMode) this.target[this.nextFrame](this.frameCaptured / this.frameTotal);
       this.capture(this.targetContext);
