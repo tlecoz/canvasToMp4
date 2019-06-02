@@ -57,3 +57,6 @@ encoder.start(demo,"nextFrame")
 //the object "demo" must contains a property "ctx" containing the reference of a context2d or a webgl-context;
 // here, "nextFrame" is the name of the function that update the demo
 // before each capture target[updateFunctionName] is called (target = demo ; updateFunctionNampe = "nextFrame" ) 
+
+
+Launch canvasToMp4.exe to start the app
