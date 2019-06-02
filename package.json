@@ -1,0 +1,38 @@
+{
+  "name": "CanvasToMP4",
+  "main": "src/index.html",
+  "description": "CanvasToMP4",
+  "version": "0.1",
+  "window": {
+    "title": "CanvasToMP4",
+    "show": true,
+    "icon": "icone.png",
+    "width": 700,
+    "height": 700,
+    "resizable": false,
+    "position": "center",
+    "toolbar": false
+  },
+  
+  "single-instance": false,
+  "repositories": {
+    "type": "git",
+    "url": "git+https://github.com/kizoa/pfHTML.git"
+  },
+  "author": "",
+  "license": "wtfpl",
+  "bugs": {
+    "url": "https://github.com/tlecoz/canvasToMp4/issues"
+  },
+  "homepage": "https://github.com/tlecoz/canvasToMp4#readme",
+  "contributors": [
+    {
+      "name": "Thomas Le Coz",
+      "email": "fanthomas.lecoz@gmail.com"
+    }
+  ],
+  "dependencies": {
+    "fs-extra": "^4.0.2",
+    "webgl-to-img-stream": "^1.0.0"
+  }
+}

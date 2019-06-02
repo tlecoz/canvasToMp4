@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <title>CanvasToMP4</title>
+    <link rel="icon" href="favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script type="application/javascript" src="build/EventDispatcher.js"></script>
+    <script type="application/javascript" src="build/FFmpegCommand.js"></script>
+    <script type="application/javascript" src="build/FFMpegCaptureManager.js"></script>
+
+
+    <script type="text/javascript">
+
+      var demo;
+      var encoder;
+
+      function startApp(){
+
+        //-----
+        var demo = document.createElement("canvas");
+        demo.width = 1920;
+        demo.height = 1080;
+        demo.ctx = demo.getContext("2d");
+
+        demo.nextFrame = function(pct){
+          this.ctx.clearRect(0,0,2560,1600)
+          this.ctx.beginPath();
+          this.ctx.fillStyle = "#ff0000";
+          this.ctx.rect(2560 * pct,1600*pct,100,100);
+        }
+
+
+        var config = {
+          width:demo.width,
+          height:demo.height,
+          fps:60,
+          durationInSeconds:1,
+          fileName:"videos/output.mp4",
+          encoderType:"h264_nvenc",
+          verticalFlip:true
+        }
+
+
+        encoder = new FFMpegCaptureManager(new FFmpegCommand(config));
+        encoder.addEventListener(FFMpegCaptureManager.FILE_CREATION_COMPLETED,function(e){ console.log("FILE CREATED") })
+        encoder.addEventListener(FFMpegCaptureManager.FRAME_ENCODED,function(e){ console.log("encodingProgress = ",encoder.encodingProgress)})
+        encoder.start(demo,"nextFrame")
+
+
+        /*
+        IMPORTANT :
+          - the object "demo" must contains a property "ctx" containing a CanvasRenderingContext2D or a WebGLRenderingContext
+          - the function used to update the "demo" can have the name you want but it must match with the second argument used with FFMpegCaptureManager.start
+        */
+
+
+      }
+
+    </script>
+</head>
+<body onload="startApp()">
+
+</body>
+</html>

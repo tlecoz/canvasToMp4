@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "sourceMap": true,
+        "watch": true,
+        "command": "tsc",
+        "showOutput": "silent",
+        "isShellCommand": true,
+        "problemMatcher": "$tsc"
+//        "allowJs": true
+    }
+}
