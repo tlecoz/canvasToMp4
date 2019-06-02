@@ -56,7 +56,9 @@ You can use these encoders :
 
   //the object "demo" must contains a property "ctx" containing the reference of a context2d or a webgl-context;
   // here, "nextFrame" is the name of the function that update the demo
-  // before each capture target[updateFunctionName] is called (target = demo ; updateFunctionNampe = "nextFrame" ) 
+  // before each capture 
+  // target[updateFunctionName] is called 
+  // where target = demo  and updateFunctionNampe = "nextFrame"  
 ```
 
 Launch canvasToMp4.exe to start the app , then press F12 to open the console 
