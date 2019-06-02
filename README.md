@@ -48,15 +48,15 @@ You can use these encoders :
     verticalFlip:false
   }
 
-encoder = new FFMpegCaptureManager(new FFmpegCommand(config));
-encoder.addEventListener(FFMpegCaptureManager.FILE_CREATION_COMPLETED,function(e){ console.log("FILE CREATED") })
-encoder.addEventListener(FFMpegCaptureManager.FRAME_ENCODED,function(e){ console.log("encodingProgress = ",encoder.encodingProgress)})
+  encoder = new FFMpegCaptureManager(new FFmpegCommand(config));
+  encoder.addEventListener(FFMpegCaptureManager.FILE_CREATION_COMPLETED,function(e){ console.log("FILE CREATED") })
+  encoder.addEventListener(FFMpegCaptureManager.FRAME_ENCODED,function(e){ console.log("encodingProgress = ",encoder.encodingProgress)})
 
-encoder.start(demo,"nextFrame") 
+  encoder.start(demo,"nextFrame") 
 
-//the object "demo" must contains a property "ctx" containing the reference of a context2d or a webgl-context;
-// here, "nextFrame" is the name of the function that update the demo
-// before each capture target[updateFunctionName] is called (target = demo ; updateFunctionNampe = "nextFrame" ) 
+  //the object "demo" must contains a property "ctx" containing the reference of a context2d or a webgl-context;
+  // here, "nextFrame" is the name of the function that update the demo
+  // before each capture target[updateFunctionName] is called (target = demo ; updateFunctionNampe = "nextFrame" ) 
 ```
 
 Launch canvasToMp4.exe to start the app
