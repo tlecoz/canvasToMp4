@@ -17,7 +17,7 @@
   "single-instance": false,
   "repositories": {
     "type": "git",
-    "url": "git+https://github.com/kizoa/pfHTML.git"
+    "url": "git+https://github.com/tlecoz/canvasToMp4.git"
   },
   "author": "",
   "license": "wtfpl",
