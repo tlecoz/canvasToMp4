@@ -59,4 +59,4 @@ You can use these encoders :
   // before each capture target[updateFunctionName] is called (target = demo ; updateFunctionNampe = "nextFrame" ) 
 ```
 
-Launch canvasToMp4.exe to start the app
+Launch canvasToMp4.exe to start the app , then press F12 to open the console 
