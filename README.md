@@ -1,5 +1,7 @@
 # canvasToMp4
 
+this tool allow you to capture a canvas frame-by-frame independently of the rendering-framerate. It means you can produce very complexe movie with a realtime framerate very slow and generate a smooth 60 FPS videos. The tool wait the end of the rendering process before to capture each frame.
+
 
 Put the file of your project inside the folder "src" , look at src/index.html to see how to use it.
 
