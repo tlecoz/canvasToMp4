@@ -12,7 +12,7 @@ You can use these encoders :
 - libx265 : to create a mp4 with a resolution higher than 4096x2048 (8192 x 4096 max) 
 - h264_nvenc : to create a mp4 using the gpu to encode the frames faster 
 - png : to create a png sequence instead of a mp4. The filename should be something like "myPng_%04d.png".
-        %04d means that the name of each png will be based on a value composed by 4 number (from myPng_0000.png to myPng_9999.png) 
+        The %04d means that the name of each png will be based on a value composed by 4 number (from myPng_0000.png to myPng_9999.png) 
         
 - pngToMp4 : to create a mp4 from a sequence of png. 
              (you need to set the property "inputPath" with the path to the folder containing the pngs 
