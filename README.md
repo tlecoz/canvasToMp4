@@ -77,4 +77,5 @@ You can use these encoders :
 
 Launch canvasToMp4.exe to start the app , then press F12 to open the console
 
-- Thanks to my teammate Shane Djafaraly who gave me a basic template using nwjs & ffmpeg as start point -
+
+(Thanks to my teammate Shane Djafaraly who gave me a basic template using nwjs & ffmpeg as start point)
