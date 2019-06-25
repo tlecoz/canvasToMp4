@@ -1,20 +1,39 @@
 # canvasToMp4
 
+<<<<<<< HEAD
 Put the file of your project inside the folder "src" , look at src/index.html to see how to use it.
 
 if your computer have no GPU , use "libx264" as encoderType ; if you have a graphic card, prefer "h264_nvec" instead - the encoding will be much faster -
 
 I'm not sure why but webgl-capture produce a vertical flip of the output by default, then you need to apply a vertical flip in the ffmpeg command in order to get the expected result.
+=======
+this tool allow you to capture a canvas frame-by-frame independently of the rendering-framerate. It means you can produce very complexe movie with a realtime framerate very slow and generate a smooth 60 FPS videos. The tool wait the end of the rendering process before to capture each frame.
+
+
+Put the file of your project inside the folder "src" , look at src/index.html to see how to use it
+(spoiler : it works exactly like a classic website but your project needs to be inside the "src" folder instead of your localhost folder ; the start point is in src/index.html)
+
+if your computer have no GPU , use "libx264" as encoderType ; if you have a graphic card, prefer "h264_nvec" instead - the encoding will be much faster -
+
+I'm not sure why but webgl-capture produce a vertical flip of the output by default, then you need to apply a counter-vertical-flip in the ffmpeg command in order to get the expected result. 
+>>>>>>> f9db20af03f61f55d02d5d63a18ba0ec88369947
 
 You can use these encoders :
 - libx264 : to create a mp4 without gpu
 - libx265 : to create a mp4 with a resolution higher than 4096x2048 (8192 x 4096 max)
 - h264_nvenc : to create a mp4 using the gpu to encode the frames faster
 - png : to create a png sequence instead of a mp4. The filename should be something like "myPng_%04d.png".
+<<<<<<< HEAD
         %04d means that the name of each png will be based on a value composed by 4 number (from myPng_0000.png to myPng_9999.png)
 
 - pngToMp4 : to create a mp4 from a sequence of png.
              (you need to set the property "inputPath" with the path to the folder containing the pngs
+=======
+        The %04d means that the name of each png will be based on a value composed by 4 number (from myPng_0000.png to myPng_9999.png) 
+        
+- pngToMp4 : to create a mp4 from a sequence of png. 
+             (you need to set the property "inputPath" with the path to the folder containing the pngs 
+>>>>>>> f9db20af03f61f55d02d5d63a18ba0ec88369947
              in the config object of the FFmpegCommand)
 
 
@@ -55,8 +74,12 @@ You can use these encoders :
 
   //the object "demo" must contains a property "ctx" containing the reference of a context2d or a webgl-context;
   // here, "nextFrame" is the name of the function that update the demo
+<<<<<<< HEAD
   // before each capture
   // target[updateFunctionName] is called
+=======
+  // before each capture    target[updateFunctionName](captureProgress)     is called 
+>>>>>>> f9db20af03f61f55d02d5d63a18ba0ec88369947
   // where target = demo  and updateFunctionNampe = "nextFrame"  
 ```
 
