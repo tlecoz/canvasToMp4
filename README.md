@@ -15,7 +15,7 @@ Put the file of your project inside the folder "src" , look at src/index.html to
 
 if your computer have no GPU , use "libx264" as encoderType ; if you have a graphic card, prefer "h264_nvec" instead - the encoding will be much faster -
 
-I'm not sure why but webgl-capture produce a vertical flip of the output by default, then you need to apply a counter-vertical-flip in the ffmpeg command in order to get the expected result. 
+I'm not sure why but webgl-capture produce a vertical flip of the output by default, then you need to apply a counter-vertical-flip in the ffmpeg command in order to get the expected result.
 >>>>>>> f9db20af03f61f55d02d5d63a18ba0ec88369947
 
 You can use these encoders :
@@ -29,10 +29,10 @@ You can use these encoders :
 - pngToMp4 : to create a mp4 from a sequence of png.
              (you need to set the property "inputPath" with the path to the folder containing the pngs
 =======
-        The %04d means that the name of each png will be based on a value composed by 4 number (from myPng_0000.png to myPng_9999.png) 
-        
-- pngToMp4 : to create a mp4 from a sequence of png. 
-             (you need to set the property "inputPath" with the path to the folder containing the pngs 
+        The %04d means that the name of each png will be based on a value composed by 4 number (from myPng_0000.png to myPng_9999.png)
+
+- pngToMp4 : to create a mp4 from a sequence of png.
+             (you need to set the property "inputPath" with the path to the folder containing the pngs
 >>>>>>> f9db20af03f61f55d02d5d63a18ba0ec88369947
              in the config object of the FFmpegCommand)
 
@@ -78,9 +78,11 @@ You can use these encoders :
   // before each capture
   // target[updateFunctionName] is called
 =======
-  // before each capture    target[updateFunctionName](captureProgress)     is called 
+  // before each capture    target[updateFunctionName](captureProgress)     is called
 >>>>>>> f9db20af03f61f55d02d5d63a18ba0ec88369947
   // where target = demo  and updateFunctionNampe = "nextFrame"  
 ```
 
 Launch canvasToMp4.exe to start the app , then press F12 to open the console
+
+- Thanks to my teammate Shane Djafaraly who gave me a basic template using nwjs & ffmpeg as start point -
