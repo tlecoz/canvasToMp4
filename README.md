@@ -1,6 +1,5 @@
 # canvasToMp4
 
-
 Put the file of your project inside the folder "src" , look at src/index.html to see how to use it.
 
 if your computer have no GPU , use "libx264" as encoderType ; if you have a graphic card, prefer "h264_nvec" instead - the encoding will be much faster -
