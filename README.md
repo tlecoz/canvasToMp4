@@ -14,7 +14,6 @@ Put the file of your project inside the folder "src" , look at src/index.html to
 
 if your computer have no GPU , use "libx264" as encoderType ; if you have a graphic card, prefer "h264_nvec" instead - the encoding will be much faster -
 
-I'm not sure why but webgl-capture produce a vertical flip of the output by default, then you need to apply a counter-vertical-flip in the ffmpeg command in order to get the expected result.
 
 You can use these encoders :
 - libx264 : to create a mp4 without gpu
@@ -26,10 +25,6 @@ You can use these encoders :
 - pngToMp4 : to create a mp4 from a sequence of png.
              (you need to set the property "inputPath" with the path to the folder containing the pngs
              The %04d means that the name of each png will be based on a value composed by 4 number (from myPng_0000.png to myPng_9999.png)
-
-- pngToMp4 : to create a mp4 from a sequence of png.
-             (you need to set the property "inputPath" with the path to the folder containing the pngs
-             in the config object of the FFmpegCommand)
 
 
 
