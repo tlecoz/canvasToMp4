@@ -64,8 +64,6 @@ You can use these encoders :
 
   //the object "demo" must contains a property "ctx" containing the reference of a context2d or a webgl-context;
   // here, "nextFrame" is the name of the function that update the demo
-  // before each capture
-  // target[updateFunctionName] is called
   // before each capture    target[updateFunctionName](captureProgress)     is called
   // where target = demo  and updateFunctionNampe = "nextFrame"  
 ```
