@@ -2,15 +2,15 @@
 
 Put the file of your project inside the folder "src" , look at src/index.html to see how to use it.
 
-if your computer have no GPU , use "libx264" as encoderType ; if you have a graphic card, prefer "h264_nvec" instead - the encoding will be much faster -
 
-I'm not sure why but webgl-capture produce a vertical flip of the output by default, then you need to apply a vertical flip in the ffmpeg command in order to get the expected result.
 
 this tool allow you to capture a canvas frame-by-frame independently of the rendering-framerate. It means you can produce very complexe movie with a realtime framerate very slow and generate a smooth 60 FPS videos. The tool wait the end of the rendering process before to capture each frame.
 
+I'm not sure why but webgl-capture produce a vertical flip of the output by default, then you need to apply a vertical flip in the ffmpeg command in order to get the expected result.
+
 
 Put the file of your project inside the folder "src" , look at src/index.html to see how to use it
-(spoiler : it works exactly like a classic website but your project needs to be inside the "src" folder instead of your localhost folder ; the start point is in src/index.html)
+(spoiler alert : it works exactly like a classic website but your project needs to be inside the "src" folder instead of your localhost folder ; the start point is in src/index.html)
 
 if your computer have no GPU , use "libx264" as encoderType ; if you have a graphic card, prefer "h264_nvec" instead - the encoding will be much faster -
 
@@ -34,10 +34,12 @@ You can use these encoders :
   var demo = document.createElement("canvas");
   demo.width = 1920;
   demo.height = 1080;
+  
+  
+  //------------------------------
   demo.ctx = demo.getContext("2d");
-
   //|-->IMPORTANT : you need to create a property "ctx" containing a context2d or a webgl-context
-
+  
   demo.nextFrame = function(captureProgress){   
     this.ctx.clearRect(0,0,demo.width,demo.height)
     this.ctx.beginPath();
@@ -59,7 +61,8 @@ You can use these encoders :
   encoder = new FFMpegCaptureManager(new FFmpegCommand(config));
   encoder.addEventListener(FFMpegCaptureManager.FILE_CREATION_COMPLETED,function(e){ console.log("FILE CREATED") })
   encoder.addEventListener(FFMpegCaptureManager.FRAME_ENCODED,function(e){ console.log("encodingProgress = ",encoder.encodingProgress)})
-
+  
+  
   encoder.start(demo,"nextFrame")
 
   //the object "demo" must contains a property "ctx" containing the reference of a context2d or a webgl-context;
