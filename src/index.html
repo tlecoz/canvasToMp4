@@ -10,8 +10,8 @@
     <script type="application/javascript" src="build/EventDispatcher.js"></script>
     <script type="application/javascript" src="build/FFmpegCommand.js"></script>
     <script type="application/javascript" src="build/FFMpegCaptureManager.js"></script>
-
-
+    <script type="application/javascript" src="build/WebGlDemo.js"></script>
+    
     <script type="text/javascript">
 
       var demo;
@@ -19,7 +19,7 @@
 
       function startApp(){
 
-        //-----
+        //----- an example with Canvas2D
         var demo = document.createElement("canvas");
         demo.width = 1920;
         demo.height = 1080;
@@ -31,7 +31,10 @@
           this.ctx.fillStyle = "#ff0000";
           this.ctx.fillRect(demo.width*pct,demo.height*pct,100,100);
         }
-
+        
+       
+          
+          
 
         var config = {
           width:demo.width,
@@ -47,15 +50,39 @@
         encoder = new FFMpegCaptureManager(new FFmpegCommand(config));
         encoder.addEventListener(FFMpegCaptureManager.FILE_CREATION_COMPLETED,function(e){ console.log("FILE CREATED") })
         encoder.addEventListener(FFMpegCaptureManager.FRAME_ENCODED,function(e){ console.log("encodingProgress = ",encoder.encodingProgress)})
+        
+          
+        //use this line for the Canvas2D example  
         encoder.start(demo,"nextFrame")
-
-
-        /*
-        IMPORTANT :
-          - the object "demo" must contains a property "ctx" containing a CanvasRenderingContext2D or a WebGLRenderingContext
-          - the function used to update the "demo" can have the name you want but it must match with the second argument used with FFMpegCaptureManager.start
+        
+        /*or theses ones for the webgl demo 
+         
+        var webglDemo = new WebGlDemo(1920,1080);
+        encoder.start(webglDemo,"draw");  
+        
+        ( I could use the same keyword "nextFrame" in the class "WebglDemo" 
+        but I wanted to show that you can use the structure you want) 
         */
-
+        
+          
+          
+          
+        
+      
+        
+        
+        
+        //############################################################################
+        //IMPORTANT :
+        //  
+        //  - the object "demo" must contains a property "ctx" containing a CanvasRenderingContext2D or a WebGLRenderingContext
+        //  - the function used to update the "demo" can have the name you want but it must match with the second argument used with FFMpegCaptureManager.start
+        //
+        //############################################################################
+        
+       
+          
+          
 
       }
 
